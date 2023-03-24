@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
 class ClientesPage extends StatelessWidget {
-  const ClientesPage({Key? key}) : super(key: key);
+  final String nomeTela;
+
+  const ClientesPage({Key? key, required this.nomeTela}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("ATM Consultoria"),
+        title: Text(nomeTela),
         backgroundColor: const Color(0xFFB8B841),
       ),
       body: SafeArea(
-        child: Center(
+        // child: Center(
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Container(
@@ -20,7 +22,7 @@ class ClientesPage extends StatelessWidget {
               child: const Text("Clientes"),
             ),
           ),
-        ),
+        // ),
       ),
     );
   }

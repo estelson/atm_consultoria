@@ -17,16 +17,16 @@ class _HomePageState extends State<HomePage> {
 
     switch(pageIndex) {
       case 1:
-        page = const EmpresaPage();
+        page = const EmpresaPage(nomeTela: "A Empresa");
         break;
       case 2:
-        page = const ServicosPage();
+        page = const ServicosPage(nomeTela: "Serviços");
         break;
       case 3:
-        page = const ClientesPage();
+        page = const ClientesPage(nomeTela: "Clientes");
         break;
       case 4:
-        page = const ContatosPage();
+        page = const ContatosPage(nomeTela: "Contato");
         break;
     }
 

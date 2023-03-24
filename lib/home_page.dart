@@ -1,3 +1,7 @@
+import 'package:atm_consultoria/pages/clientes_page.dart';
+import 'package:atm_consultoria/pages/contatos_page.dart';
+import 'package:atm_consultoria/pages/empresa_page.dart';
+import 'package:atm_consultoria/pages/servicos_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -8,6 +12,30 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  void _abrirTela(int pageIndex) {
+    Widget page = const HomePage();
+
+    switch(pageIndex) {
+      case 1:
+        page = const EmpresaPage();
+        break;
+      case 2:
+        page = const ServicosPage();
+        break;
+      case 3:
+        page = const ClientesPage();
+        break;
+      case 4:
+        page = const ContatosPage();
+        break;
+    }
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => page),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,12 +61,12 @@ class _HomePageState extends State<HomePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () => _abrirTela(1),
                           child: Image.asset("assets/images/menu_empresa.png"),
                         ),
                         const SizedBox(width: 32),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () => _abrirTela(2),
                           child: Image.asset("assets/images/menu_servico.png"),
                         )
                       ],
@@ -50,12 +78,12 @@ class _HomePageState extends State<HomePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () => _abrirTela(3),
                           child: Image.asset("assets/images/menu_cliente.png"),
                         ),
                         const SizedBox(width: 32),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () => _abrirTela(4),
                           child: Image.asset("assets/images/menu_contato.png"),
                         )
                       ],
